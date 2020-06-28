@@ -11,6 +11,10 @@
             <MenuItem Header="Главное меню">
                 <MenuItem x:Name="MenuItemExit" Header="Выход"/>
             </MenuItem>
+            <MenuItem Header="Управление учениками">
+                <MenuItem x:Name="MenuItemAddStudent" Header="Добавить ученика"/>
+                <MenuItem x:Name="MenuItemDelStudent" Header="Удалить ученика"/>
+            </MenuItem>
             <MenuItem Header="Справка">
                 <MenuItem x:Name="MenuItemAbout" Header="О программе ..."/>
             </MenuItem>
