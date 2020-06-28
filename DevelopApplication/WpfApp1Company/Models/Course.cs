@@ -9,15 +9,11 @@ using WpfApp1Company.Annotations;
 
 namespace WpfApp1Company.Models
 {
-    /// <summary>
-    /// Курс
-    /// </summary>
-    class Courses : INotifyPropertyChanged
+    /// <summary> Курс </summary>
+    class Course : INotifyPropertyChanged
     {
         private string _name;
-        /// <summary>
-        /// Название курса
-        /// </summary>
+        /// <summary> Название курса </summary>
         public string Name
         {
             get => _name;
@@ -28,7 +24,7 @@ namespace WpfApp1Company.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Name)));
             }
         }
-        public Courses(string name)
+        public Course(string name)
         {
             _name = name;
         }
