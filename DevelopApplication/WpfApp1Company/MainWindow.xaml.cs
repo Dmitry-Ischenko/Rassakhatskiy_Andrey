@@ -50,6 +50,9 @@ namespace WpfApp1Company
             {
                 ListBoxCourses.SelectedIndex = ComboBoxCoursesStudent.SelectedIndex;
             };
+
+            MenuItemExit.Click += (o, args) => { Close(); };
+
         }
         void OnButtonAddStudentOnClick(object sender, RoutedEventArgs e)
         {

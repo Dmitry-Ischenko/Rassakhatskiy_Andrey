@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="700" Loaded="MainWindow_OnLoaded">
     <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Главное меню">
+                <MenuItem x:Name="MenuItemExit" Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem x:Name="About" Header="О программе ..."/>
+            </MenuItem>
+        </Menu>
         <ToolBarPanel DockPanel.Dock="Top">
             <ToolBar FontSize="14">
                 <Button x:Name="ButtonAdd" Content="Добавить новый курс" Margin="3"/>
