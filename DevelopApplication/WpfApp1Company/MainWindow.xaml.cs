@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1Company.Models;
 
 namespace WpfApp1Company
 {
@@ -23,6 +24,24 @@ namespace WpfApp1Company
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            Geekbrains _geekbrains = new Geekbrains(10, 100);
+            GridMain.DataContext = _geekbrains;
+
+            ButtonAdd.Click += delegate
+            {
+                _geekbrains.AddCourse(new Course("Курс Java"));
+            };
+            ButtonDelete.Click += delegate
+            {
+                Course select = (Course)ListBoxCourses.SelectedItem;
+                if (select == null)
+                    return;
+                _geekbrains.DelCourse(select);
+            };
         }
     }
 }
