@@ -25,7 +25,7 @@ namespace WpfApp1Company
         }
         private void AboutWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            ButtonOk.Click += delegate { DialogResult = false };
+            ButtonOk.Click += delegate { DialogResult = false; };
         }
     }
 }

@@ -52,7 +52,10 @@ namespace WpfApp1Company
             };
 
             MenuItemExit.Click += (o, args) => { Close(); };
-
+            MenuItemAbout.Click += (o, args) =>
+            {
+                var _ = new AboutWindow().ShowDialog();
+            };
         }
         void OnButtonAddStudentOnClick(object sender, RoutedEventArgs e)
         {

@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1Company"
         mc:Ignorable="d"
-        Title="Окно о программе" Height="400" Width="400" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" Loaded="AboutWindow_OnLoaded">
+        Title="Окно о программе" Height="400" Width="400" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Loaded="AboutWindow_OnLoaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListBox>
+        <TextBox TextWrapping="Wrap">
             Очень хорошая программа
-        </ListBox>
+        </TextBox>
         <Button x:Name="ButtonOk" Grid.Row="1" Content="OK" Width="200" Height="30"/>
     </Grid>
 </Window>
