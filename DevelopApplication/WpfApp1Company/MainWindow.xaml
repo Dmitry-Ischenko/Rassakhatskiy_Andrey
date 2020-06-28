@@ -66,6 +66,22 @@
                     </ListBox>
                 </GroupBox>
             </Grid>
+            <GroupBox Grid.Column="2" Header="Изменения учеников" FontSize="14">
+                <StackPanel>
+                    <TextBlock Text="Фамилия:"/>
+                    <TextBox Text="{Binding ElementName=ListBoxStudents, Path=SelectedItem.Fam, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Имя:"/>
+                    <TextBox Text="{Binding ElementName=ListBoxStudents, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Дата рождения:"/>
+                    <DatePicker Text="{Binding ElementName=ListBoxStudents, Path=SelectedItem.Birthday, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Успеваемость:"/>
+                    <TextBox Text="{Binding ElementName=ListBoxStudents, Path=SelectedItem.Progress, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock Text="Курс:"/>
+                    <ComboBox x:Name="ComboBoxCoursesStudent" ItemsSource="{Binding Path=Courses}" DisplayMemberPath="Name" SelectedItem="{Binding ElementName=ListBoxStudents, Path=SelectedItem.Course}"/>
+                    <Button x:Name="ButtonAddStudent" Content="Добавить ученика" Margin="0,20,0,0"/>
+                    <Button x:Name="ButtonDelStudent" Content="Удалить ученика" Margin="0,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
         </Grid>
     </DockPanel>
 </Window>

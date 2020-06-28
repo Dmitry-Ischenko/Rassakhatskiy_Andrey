@@ -42,6 +42,10 @@ namespace WpfApp1Company
                     return;
                 _geekbrains.DelCourse(select);
             };
+            ComboBoxCoursesStudent.SelectionChanged += delegate
+            {
+                ListBoxCourses.SelectedIndex = ComboBoxCoursesStudent.SelectedIndex;
+            };
         }
     }
 }

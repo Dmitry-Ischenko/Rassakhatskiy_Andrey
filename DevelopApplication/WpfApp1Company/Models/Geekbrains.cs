@@ -22,7 +22,7 @@ namespace WpfApp1Company.Models
             for (int i = 0; i < sizeCours; i++)
                 Courses.Add(new Course($"Курс продвинутый C# {i}", Students));
             for (int i = 0; i < sizeStud; i++)
-                Students.Add(new Student($"Бут {i}", $"Сергей {i}", new DateTime(1995, 01,01 ), random.Next(5), Courses[random.Next(Courses.Count)] ));
+                Students.Add(new Student($"Бут {i}", $"Сергей {i}", new DateTime( random.Next(1900,2000), random.Next(1,10),random.Next(1,10) ), random.Next(5), Courses[random.Next(Courses.Count)] ));
         }
         /// <summary>
         /// Новый курс
