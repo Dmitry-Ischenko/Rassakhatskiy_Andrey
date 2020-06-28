@@ -19,6 +19,7 @@ namespace WpfApp1Company.Models
             Random random = new Random();
             Courses = new ObservableCollection<Course>();
             Students = new ObservableCollection<Student>();
+            Courses.Add(new NoCourse(Students));
             for (int i = 0; i < sizeCours; i++)
                 Courses.Add(new Course($"Курс продвинутый C# {i}", Students));
             for (int i = 0; i < sizeStud; i++)
@@ -40,6 +41,11 @@ namespace WpfApp1Company.Models
         public void DelCourse(Course delCourse)
         {
             if (delCourse == null) return;
+            if (delCourse is NoCourse)
+            {
+                MessageBox.Show("Нулевой курс удалить нельзя!");
+                return;
+            }
             if (Students.Count(s => s.Course == delCourse) > 0)
             {
                 MessageBox.Show("На этом курсе еще учатся несколько учеников!");

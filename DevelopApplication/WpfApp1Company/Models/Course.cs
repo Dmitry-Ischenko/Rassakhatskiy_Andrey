@@ -25,8 +25,8 @@ namespace WpfApp1Company.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Name)));
             }
         }
-        private IEnumerable<Student> _students;
-        public IEnumerable<Student> Students => _students.Where(s => s.Course == this);
+        protected IEnumerable<Student> _students;
+        public virtual IEnumerable<Student> Students => _students.Where(s => s.Course == this);
 
         public Course(string name, IEnumerable<Student> students)
         {

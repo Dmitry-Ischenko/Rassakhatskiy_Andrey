@@ -42,10 +42,27 @@ namespace WpfApp1Company
                     return;
                 _geekbrains.DelCourse(select);
             };
+            ButtonAddStudent.Click += delegate
+            {
+                var stdn = new Student("Пупкин", "Вася", new DateTime(1990, 1, 1), 5);
+                _geekbrains.AddStudent( stdn );
+                ListBoxCourses.SelectedIndex = -1;
+                ListBoxCourses.SelectedIndex = 0;
+            };
+            ButtonDelStudent.Click += delegate
+            {
+                Student student = (Student) ListBoxStudents.SelectedItem;
+                if (student == null)
+                    return;
+                _geekbrains.DelStudent(student);
+                ListBoxCourses.SelectedIndex = -1;
+                ListBoxCourses.SelectedIndex = 0;
+            };
             ComboBoxCoursesStudent.SelectionChanged += delegate
             {
                 ListBoxCourses.SelectedIndex = ComboBoxCoursesStudent.SelectedIndex;
             };
         }
+
     }
 }

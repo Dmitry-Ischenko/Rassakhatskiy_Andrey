@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Geekbrains.cs" />
+    <Compile Include="Models\NoCourse.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
