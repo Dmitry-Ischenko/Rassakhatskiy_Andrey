@@ -11,9 +11,7 @@
             <RowDefinition Height="6*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox TextWrapping="Wrap">
-            Очень хорошая программа
-        </TextBox>
+        <TextBox TextWrapping="Wrap" Text="{StaticResource StringName}"/>
         <Button x:Name="ButtonOk" Grid.Row="1" Content="OK" Width="200" Height="30"/>
     </Grid>
 </Window>
