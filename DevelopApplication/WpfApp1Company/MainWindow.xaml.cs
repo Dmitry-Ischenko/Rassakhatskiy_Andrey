@@ -46,6 +46,8 @@ namespace WpfApp1Company
             ButtonAddStudent2.Click += OnButtonAddStudentOnClick;
             ButtonDelStudent.Click += OnButtonDelStudentOnClick;
             ButtonDeleteStudent2.Click += OnButtonDelStudentOnClick;
+            MenuItemAddStudent.Click += OnButtonAddStudentOnClick;
+            MenuItemDelStudent.Click += OnButtonAddStudentOnClick;
             ComboBoxCoursesStudent.SelectionChanged += delegate
             {
                 ListBoxCourses.SelectedIndex = ComboBoxCoursesStudent.SelectedIndex;
