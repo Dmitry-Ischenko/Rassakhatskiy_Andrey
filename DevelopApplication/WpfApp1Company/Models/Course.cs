@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,9 +25,13 @@ namespace WpfApp1Company.Models
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(this.Name)));
             }
         }
-        public Course(string name)
+        private IEnumerable<Student> _students;
+        public IEnumerable<Student> Students => _students.Where(s => s.Course == this);
+
+        public Course(string name, IEnumerable<Student> students)
         {
             _name = name;
+            _students = students;
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }

@@ -33,7 +33,7 @@ namespace WpfApp1Company
 
             ButtonAdd.Click += delegate
             {
-                _geekbrains.AddCourse(new Course("Курс Java"));
+                _geekbrains.AddCourse(new Course("Курс Java", _geekbrains.Students));
             };
             ButtonDelete.Click += delegate
             {

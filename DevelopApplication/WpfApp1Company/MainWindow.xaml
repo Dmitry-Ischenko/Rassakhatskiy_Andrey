@@ -9,16 +9,18 @@
     <DockPanel>
         <ToolBarPanel DockPanel.Dock="Top">
             <ToolBar FontSize="14">
-                <Button x:Name="ButtonAdd" Content="Добавить новый курс"/>
-                <Button x:Name="ButtonDelete" Content="Удалить выбранный курс"/>
+                <Button x:Name="ButtonAdd" Content="Добавить новый курс" Margin="3"/>
+                <Button x:Name="ButtonDelete" Content="Удалить выбранный курс" Margin="3"/>
             </ToolBar>
         </ToolBarPanel>
         <Grid x:Name="GridMain">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <GridSplitter Grid.Column="0" Width="5" Background="CornflowerBlue"/>
+            <GridSplitter Grid.Column="1" Width="5" Background="CornflowerBlue"/>
             <GroupBox Header="Все курсы:" Margin="0,0,5,0" FontSize="14">
                 <ListBox x:Name="ListBoxCourses" ItemsSource="{Binding Path=Courses}" VirtualizingStackPanel.IsVirtualizing="True">
                     <ListBox.ItemsPanel>
@@ -38,18 +40,32 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Редактирование названия курса:" FontSize="14" Margin="5"/>
-                    <TextBox Text="{Binding ElementName=ListBoxCourses, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="14" Margin="5" Width="200"/>
-                </StackPanel>
-
+                <WrapPanel Margin="0,0,5,0">
+                    <TextBlock Text="Изменение название курса:" FontSize="14" Margin="3"/>
+                    <TextBox Text="{Binding ElementName=ListBoxCourses, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}" FontSize="14" Margin="3" Width="200"/>
+                </WrapPanel>
+                <GroupBox Grid.Row="1" Header="Все ученики этого курса:" FontSize="14" Margin="0,0,5,0">
+                    <ListBox x:Name="ListBoxStudents" ItemsSource="{Binding ElementName=ListBoxCourses, Path=SelectedItem.Students}" VirtualizingStackPanel.IsVirtualizing="True">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat=" {0}, {1}">
+                                            <Binding Path="Fam"/>
+                                            <Binding Path="Name"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </GroupBox>
             </Grid>
-
-
-
-        
         </Grid>
     </DockPanel>
-
-
 </Window>

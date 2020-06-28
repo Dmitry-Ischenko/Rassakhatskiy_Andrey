@@ -20,7 +20,7 @@ namespace WpfApp1Company.Models
             Courses = new ObservableCollection<Course>();
             Students = new ObservableCollection<Student>();
             for (int i = 0; i < sizeCours; i++)
-                Courses.Add(new Course($"Курс продвинутый C# {i}"));
+                Courses.Add(new Course($"Курс продвинутый C# {i}", Students));
             for (int i = 0; i < sizeStud; i++)
                 Students.Add(new Student($"Бут {i}", $"Сергей {i}", new DateTime(1995, 01,01 ), random.Next(5), Courses[random.Next(Courses.Count)] ));
         }
