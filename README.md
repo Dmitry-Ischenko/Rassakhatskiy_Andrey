@@ -1,3 +1,5 @@
 # Rassakhatskiy_Andrey
 
-Описание
+
+Тренировка гитхаба
+
