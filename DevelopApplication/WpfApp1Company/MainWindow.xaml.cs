@@ -28,7 +28,7 @@ namespace WpfApp1Company
         }
         private void MainWindow_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _geekbrains = new Geekbrains(10, 100);
+            _geekbrains = new Geekbrains(100, 1000);
             GridMain.DataContext = _geekbrains;
 
             ButtonAdd.Click += delegate
@@ -49,6 +49,12 @@ namespace WpfApp1Company
             ComboBoxCoursesStudent.SelectionChanged += delegate
             {
                 ListBoxCourses.SelectedIndex = ComboBoxCoursesStudent.SelectedIndex;
+            };
+
+            MenuItemExit.Click += (o, args) => { Close(); };
+            MenuItemAbout.Click += (o, args) =>
+            {
+                var _ = new AboutWindow().ShowDialog();
             };
         }
         void OnButtonAddStudentOnClick(object sender, RoutedEventArgs e)
